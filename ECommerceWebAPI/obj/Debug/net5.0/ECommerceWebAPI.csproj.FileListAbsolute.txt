@@ -41,7 +41,6 @@ C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Micro
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -63,3 +62,13 @@ C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Core.
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Infrastructure.dll
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Core.pdb
 C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Infrastructure.pdb
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\System.Web.Http.Cors.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Raj\source\repos\ECommerceWebAPI\ECommerceWebAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

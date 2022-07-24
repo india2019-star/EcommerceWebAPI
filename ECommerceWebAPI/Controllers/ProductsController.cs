@@ -1,4 +1,9 @@
-﻿using Core.Models;
+﻿using AutoMapper;
+using Core;
+using Core.Interfaces;
+using Core.Models;
+using ECommerceWebAPI.DTO;
+using ECommerceWebAPI.Errors;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,29 +16,55 @@ using System.Threading.Tasks;
 namespace ECommerceWebAPI.Controllers
 {
 
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductsController : ControllerBase
+    //[Route("api/[controller]")]
+    //[ApiController]
+    public class ProductsController : BaseController
     {
-        private StoreContext _context;
-        public ProductsController(StoreContext context)
+        private readonly IProductRepository _repo;
+        private readonly IMapper _mapper;
+        public ProductsController(IProductRepository repo, IMapper mapper)
         {
-            _context = context;
+            _repo = repo;
+            _mapper = mapper;
         }
 
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductDTO>>> GetProducts([FromQuery] ProductParams productParams)
         {
-            var products = await _context.Products.ToListAsync();
-            return Ok(products);
+            var products = await _repo.GetProductsAsync(productParams);
+
+            var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDTO>>(products.Data);
+           // products.Data = data;
+            return Ok(new Pagination<ProductDTO>(products.PageIndex,products.PageSize,products.Count,data));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetSingleProduct(int id)
+        public async Task<ActionResult<ProductDTO>> GetSingleProduct(int id)
         {
-            var prod = await _context.Products.SingleOrDefaultAsync(w => w.Id == id);
-            return prod;
+            var prod = await _repo.GetProductByIdAsync(id);
+            if(prod == null)
+            {
+                return NotFound(new ApiResponse(404));
+            }
+            return _mapper.Map<Product, ProductDTO>(prod);
         }
+
+        [HttpGet("brands")]
+
+        public async Task<ActionResult<ProductBrand>> GetProductBrands()
+        {
+            var prodbrands = await _repo.GetProductBrandsAsync();
+            return Ok(prodbrands);
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<ProductType>> GetProductTypes()
+        {
+            var prodtypes = await _repo.GetProductTypesAsync();
+            return Ok(prodtypes);
+        }
+
+
     }
 }
