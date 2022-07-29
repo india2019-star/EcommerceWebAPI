@@ -9,6 +9,9 @@ namespace Core.Interfaces
 {
     public interface IProductRepository
     {
+         Task AddProductsAsync(Product[] product);
+         Task AddProductBrandsAsync(ProductBrand[] productBrand);
+         Task AddProductTypesAsync (ProductType[] productType);
         Task<Product> GetProductByIdAsync(int id);
 
         Task<Pagination<Product>> GetProductsAsync(ProductParams productParams);

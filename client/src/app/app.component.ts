@@ -1,6 +1,3 @@
-import { IPagination } from './models/pagination';
-import { IProduct } from './models/products';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,16 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Skinet';
-  products:IProduct[];
-  
-  constructor(private http:HttpClient){}
 
-  ngOnInit(): void {
-    this.http.get('https://localhost:44300/api/products?').subscribe((response:IPagination) =>{
-      this.products = response.data;
-    },error=>{
-      console.log(error)
-    });
+  ngOnInit(): void { 
   }
   
 }

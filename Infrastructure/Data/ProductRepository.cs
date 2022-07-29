@@ -20,6 +20,39 @@ namespace Infrastructure.Data
             _context = context;
         }
 
+        public async Task  AddProductBrandsAsync(ProductBrand[] productBrand)
+        {
+           
+            foreach(var item in productBrand)
+            {
+                _context.ProductBrands.Add(item);
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
+     
+
+        public async Task AddProductsAsync(Product[] product)
+        {
+           foreach(var item in product)
+            {
+                _context.Products.Add(item);
+            }
+            await _context.SaveChangesAsync();
+        }
+
+       
+
+        public async Task  AddProductTypesAsync(ProductType[] productType)
+        {
+            foreach (var item in productType)
+            {
+                _context.ProductTypes.Add(item);
+            }
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync()
         {
             return await _context.ProductBrands.ToListAsync();

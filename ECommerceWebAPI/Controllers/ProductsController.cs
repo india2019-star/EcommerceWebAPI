@@ -28,6 +28,23 @@ namespace ECommerceWebAPI.Controllers
             _mapper = mapper;
         }
 
+        [HttpPost("addProducts")]
+        public  void AddProducts(Product[] products) 
+        {
+             _repo.AddProductsAsync(products);
+        }
+
+        [HttpPost("addProductBrands")]
+        public void AddProductBrands(ProductBrand[] productBrands)
+        {
+            _repo.AddProductBrandsAsync(productBrands);
+        }
+
+        [HttpPost("addProductTypes")]
+        public void AddProductTypes(ProductType[] productTypes)
+        {
+            _repo.AddProductTypesAsync(productTypes);
+        }
 
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductDTO>>> GetProducts([FromQuery] ProductParams productParams)
