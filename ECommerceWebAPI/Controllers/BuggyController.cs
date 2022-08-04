@@ -37,11 +37,11 @@ namespace ECommerceWebAPI.Controllers
         public ActionResult GetServerError()
         {
             var getitem = _context.Products.Find(100);
-            if(getitem == null)
-            {
-                return NotFound(new ApiResponse(500));
-                //var stringthing = getitem.ToString();
-            }
+            //if(getitem == null)
+            //{
+            //    return NotFound(new ApiResponse(500));
+                var stringthing = getitem.ToString();
+          //  }
             
             return Ok();
         }

@@ -12,7 +12,7 @@ import { IPagination } from '../shared/models/pagination';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  @ViewChild('search',{static:true}) searchTerm;
+  @ViewChild('search',{static:false}) searchTerm;
  products:IProduct[];
  productBrands:IBrand[];
  productTypes:IType[];
