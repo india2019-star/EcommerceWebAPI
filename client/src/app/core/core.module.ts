@@ -1,3 +1,4 @@
+import { BasketModule } from './../basket/basket.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,12 +12,15 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
 
 
 
+
+
 @NgModule({
   declarations: [NavBarComponent, TestErorComponent, NotFoundComponent, ServerErrorComponent, SectionHeaderComponent],
   imports: [
     CommonModule,
     RouterModule,
     BreadcrumbModule,
+    BasketModule,
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right',
       preventDuplicates:true

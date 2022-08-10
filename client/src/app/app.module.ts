@@ -1,3 +1,5 @@
+import { CheckoutModule } from './checkout/checkout.module';
+import { BasketModule } from './basket/basket.module';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { ErrorInterceptorInterceptor } from './core/interceptors/error-interceptor.interceptor';
 import { HomeModule } from './home/home.module';
@@ -23,7 +25,9 @@ import {NgxSpinnerModule} from "ngx-spinner";
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BasketModule,
+    CheckoutModule
   ],
   providers: [{provide : HTTP_INTERCEPTORS, useClass : ErrorInterceptorInterceptor,multi:true},
               {provide : HTTP_INTERCEPTORS, useClass : LoadingInterceptor,multi:true}],
